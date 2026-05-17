@@ -1,0 +1,1427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="Shahad Code - Software Engineer portfolio specializing in Java, Spring Boot, REST APIs, and data processing systems. Building scalable backend solutions and elegant digital experiences.">
+  <title>Shahad Code | Software Engineer Portfolio</title>
+<link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+
+<style>
+:root{
+--primary:#7c5cff;
+--cyan:#22d3ee;
+--bg:#ffffff;
+--card:#ffffff;
+--text:#111827;
+--muted:#667085;
+--border:rgba(124,92,255,.16);
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;}
+body{
+margin:0;
+font-family:Segoe UI;
+background:
+radial-gradient(circle at 18% 12%,rgba(124,92,255,.12),transparent 30%),
+radial-gradient(circle at 88% 18%,rgba(34,211,238,.12),transparent 28%),
+linear-gradient(180deg,#ffffff 0%,#f8f9ff 100%);
+color:var(--text);
+}
+
+header{
+display:flex;
+position:relative;
+z-index:10;
+justify-content:space-between;
+align-items:center;
+padding:20px 50px;
+border-bottom:1px solid var(--border);
+background:rgba(255,255,255,.82);
+backdrop-filter:blur(18px);
+box-shadow:0 12px 35px rgba(17,24,39,.05);
+}
+
+.logo{
+font-family:monospace;
+font-size:26px;
+font-weight:900;
+background:linear-gradient(135deg,var(--primary),var(--cyan));
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+nav a{
+margin:0 15px;
+color:#475467;
+text-decoration:none;
+position:relative;
+padding:8px 0;
+transition:color .3s ease;
+}
+
+nav a::after{
+content:"";
+position:absolute;
+left:0;
+bottom:0;
+width:0;
+height:2px;
+border-radius:99px;
+background:linear-gradient(90deg,var(--primary),var(--cyan));
+box-shadow:0 0 14px rgba(124,92,255,.7);
+transition:width .3s ease;
+}
+
+nav a:hover{
+color:var(--primary);
+}
+
+nav a:hover::after{
+width:100%;
+}
+
+.hero{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:88px 60px 70px;
+gap:40px;
+}
+
+.hero-text{
+max-width:500px;
+}
+
+.hero-img{
+width:520px;
+height:380px;
+border-radius:22px;
+position:relative;
+margin-top:0;
+z-index:1;
+}
+
+.hero-text{
+max-width:700px;
+}
+
+.hero-img{
+margin:0 auto 30px;
+}
+
+.hero-text h1{font-size:64px;margin:0}
+.hero-text span{color:var(--primary)}
+.hero-text p{color:var(--muted);max-width:500px}
+
+.btn{
+display:inline-flex;
+align-items:center;
+justify-content:center;
+padding:10px 22px;
+border-radius:12px;
+background:linear-gradient(135deg,var(--primary),#9b72ff);
+border:none;
+color:white;
+margin-top:24px;
+cursor:pointer;
+font-weight:600;
+font-size:15px;
+min-width:150px;
+text-align:center;
+text-decoration:none;
+transition:.3s ease;
+}
+
+/* smaller, consistent project buttons */
+.btn-sm{
+padding:8px 14px;
+font-size:14px;
+min-width:auto;
+width:100%;
+gap:8px;
+border-radius:10px;
+}
+
+.project-card .btn-sm{
+margin-top:12px;
+align-self:stretch;
+margin-top:12px;
+}
+
+.btn:hover{
+transform:translateY(-3px) scale(1.03);
+box-shadow:0 0 20px rgba(124,92,255,.4);
+}
+
+.btn:hover{
+transform:translateY(-3px) scale(1.03);
+box-shadow:0 0 20px rgba(124,92,255,.4);
+}
+
+.hero-img{
+width:520px;
+height:380px;
+border-radius:22px;
+position:relative;
+margin-top:-120px;
+z-index:5;
+}
+
+.hero-real-img{
+width:100%;
+height:100%;
+object-fit:cover;
+border-radius:22px;
+filter:brightness(.9) contrast(1.1);
+}
+
+.hero-img::before{
+content:"";
+position:absolute;
+left:45px;
+top:55px;
+width:330px;
+height:215px;
+border-radius:20px 20px 10px 10px;
+background:linear-gradient(145deg,#171b38,#070915 70%);
+border:1px solid rgba(124,92,255,.55);
+box-shadow:0 0 34px rgba(124,92,255,.26), inset 0 0 22px rgba(34,211,238,.05);
+z-index:1;
+}
+
+.hero-img::after{
+content:"";
+position:absolute;
+left:18px;
+top:270px;
+width:385px;
+height:45px;
+border-radius:0 0 34px 34px;
+background:linear-gradient(180deg,#151936,#070815);
+border:1px solid rgba(124,92,255,.38);
+box-shadow:0 22px 38px rgba(0,0,0,.55), 0 0 24px rgba(124,92,255,.16);
+z-index:0;
+}
+
+
+
+
+
+.laptop-screen{
+position:absolute;
+left:75px;
+top:82px;
+width:270px;
+height:160px;
+border-radius:14px;
+background:
+linear-gradient(90deg,rgba(124,92,255,.16) 1px,transparent 1px),
+linear-gradient(rgba(124,92,255,.12) 1px,transparent 1px),
+#090d1f;
+background-size:22px 22px;
+overflow:hidden;
+z-index:2;
+box-shadow:inset 0 0 28px rgba(0,0,0,.6);
+}
+
+.laptop-screen span{
+display:block;
+height:6px;
+border-radius:99px;
+background:rgba(167,139,250,.7);
+margin:12px 18px;
+width:70%;
+box-shadow:0 0 12px rgba(124,92,255,.5);
+}
+
+.laptop-screen span:nth-child(2){width:48%;background:rgba(34,211,238,.55)}
+.laptop-screen span:nth-child(3){width:62%}
+.laptop-screen span:nth-child(4){width:38%;background:rgba(34,211,238,.55)}
+
+.phone-mockup{
+position:absolute;
+right:45px;
+bottom:72px;
+width:78px;
+height:145px;
+border-radius:20px;
+background:#080b18;
+border:1px solid rgba(124,92,255,.55);
+box-shadow:0 0 26px rgba(124,92,255,.28);
+z-index:3;
+}
+
+.phone-mockup::before{
+content:"";
+position:absolute;
+left:18px;
+top:14px;
+width:36px;
+height:5px;
+border-radius:99px;
+background:rgba(167,139,250,.6);
+}
+
+.phone-mockup::after{
+content:"";
+position:absolute;
+left:14px;
+top:35px;
+width:44px;
+height:70px;
+border-radius:10px;
+background:linear-gradient(180deg,rgba(124,92,255,.35),rgba(34,211,238,.12));
+}
+
+.code-float{
+position:absolute;
+right:42px;
+top:48px;
+width:62px;
+height:62px;
+border-radius:14px;
+border:1px solid rgba(124,92,255,.45);
+display:flex;
+align-items:center;
+justify-content:center;
+color:#a78bfa;
+font-size:26px;
+background:rgba(10,12,28,.75);
+box-shadow:0 0 24px rgba(124,92,255,.22);
+z-index:4;
+}
+
+.hero-img{
+display:flex;
+align-items:center;
+justify-content:center;
+isolation:isolate;
+margin:0 auto 30px;
+}
+
+.hero-img::before{
+left:50%;
+top:50%;
+width:330px;
+height:330px;
+border-radius:32px;
+transform:translate(-50%,-50%) rotate(-4deg);
+background:linear-gradient(145deg,rgba(255,255,255,.94),rgba(244,247,255,.82));
+border:1px solid rgba(124,92,255,.22);
+box-shadow:0 30px 70px rgba(124,92,255,.16), inset 0 0 35px rgba(34,211,238,.08);
+z-index:-2;
+}
+
+.hero-img::after{
+left:58px;
+top:38px;
+width:395px;
+height:285px;
+border-radius:34px;
+transform:rotate(7deg);
+background:linear-gradient(135deg,rgba(124,92,255,.15),rgba(34,211,238,.13));
+border:1px solid rgba(124,92,255,.14);
+box-shadow:none;
+z-index:-3;
+}
+
+.emoji-girl-image{
+width:255px;
+height:255px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+background:
+radial-gradient(circle at 35% 24%,rgba(255,255,255,.9),transparent 28%),
+linear-gradient(145deg,#f6f1ff,#e9fbff);
+border:1px solid rgba(124,92,255,.2);
+box-shadow:0 24px 60px rgba(124,92,255,.22), 0 0 0 14px rgba(124,92,255,.06);
+position:relative;
+z-index:3;
+overflow:hidden;
+padding:12px;
+}
+
+.emoji-girl-image img{
+width:118%;
+height:118%;
+object-fit:contain;
+object-position:center bottom;
+display:block;
+}
+
+.hero-badge{
+position:absolute;
+border-radius:999px;
+background:transparent;
+border:0;
+box-shadow:none;
+color:#7c5cff;
+font-weight:700;
+z-index:4;
+pointer-events:none;
+}
+
+.hero-badge.sparkle{
+left:76px;
+bottom:72px;
+padding:0;
+color:var(--primary);
+font-size:13px;
+letter-spacing:.5px;
+text-transform:uppercase;
+opacity:.72;
+}
+
+.code-float{
+right:62px;
+top:70px;
+background:linear-gradient(135deg,var(--primary),#9b72ff);
+color:white;
+box-shadow:0 18px 35px rgba(124,92,255,.28);
+}
+
+section{padding:60px}
+h2{
+margin-bottom:30px;
+font-size:22px;
+font-weight:700;
+}
+
+#skills h2,
+#projects h2,
+#contact h2{
+color:#a78bfa;
+text-transform:uppercase;
+font-size:16px;
+letter-spacing:1px;
+margin-bottom:18px;
+}
+
+
+
+.section-title{
+font-size:28px;
+margin-bottom:25px;
+}
+
+.card{
+background:var(--card);
+border:1px solid var(--border);
+border-radius:18px;
+padding:20px;
+transition:.3s;
+box-shadow:0 18px 45px rgba(17,24,39,.06);
+}
+.card:hover{
+transform:translateY(-8px);
+box-shadow:0 22px 55px rgba(124,92,255,.14);
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:24px;
+align-items:stretch;
+max-width:1100px;
+margin:0 auto;
+}
+
+.project-card{
+display:flex;
+flex-direction:column;
+height:100%;
+}
+
+.project-card p{
+flex-grow:1;
+}
+
+.project-card{
+display:flex;
+flex-direction:column;
+height:100%;
+}
+
+.project-card p{
+flex-grow:1;
+}
+
+.project-card{
+display:flex;
+flex-direction:column;
+height:100%;
+}
+
+.project-card p{
+flex-grow:1;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+}
+
+.stats{
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:40px;
+margin-top:40px;
+padding-top:20px;
+border-top:1px solid rgba(124,92,255,.15);
+}
+
+.stat{
+text-align:center;
+flex:1;
+position:relative;
+padding:16px 10px;
+border-radius:16px;
+transition:.35s ease;
+}
+
+
+.stat:hover{
+transform:translateY(-5px);
+}
+
+.stat:hover strong{
+transform:translateY(-6px) scale(1.18);
+color:#a78bfa;
+letter-spacing:1px;
+}
+
+
+.stat strong{
+font-size:34px;
+color:var(--primary);
+display:block;
+margin-bottom:8px;
+position:relative;
+transition:.3s ease;
+}
+
+.stat p{
+margin:0;
+font-size:14px;
+color:var(--muted);
+letter-spacing:.5px;
+position:relative;
+}
+
+.skills-tabs{
+display:flex;
+gap:10px;
+margin-bottom:20px;
+}
+
+.tab{
+padding:10px 15px;
+border-radius:10px;
+border:1px solid var(--border);
+color:#475467;
+background:rgba(255,255,255,.72);
+}
+
+.icons{
+display:flex;
+gap:22px;
+font-size:42px;
+align-items:center;
+justify-content:center;
+flex-wrap:wrap;
+min-height:95px;
+}
+
+.skill-box h3{
+font-size:14px;
+text-align:center;
+color:#344054;
+margin:0 0 14px;
+font-weight:700;
+}
+
+.icons i,
+.icons img{
+transition:.25s ease;
+filter:drop-shadow(0 0 10px rgba(124,92,255,.25));
+}
+
+.icons i:hover,
+.icons img:hover{
+transform:translateY(-6px) scale(1.12);
+filter:drop-shadow(0 0 18px rgba(124,92,255,.55));
+}
+
+.social-icons{
+display:flex;
+gap:14px;
+margin-top:20px;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.social-icons a{
+width:48px;
+height:48px;
+border-radius:14px;
+display:flex;
+align-items:center;
+justify-content:center;
+background:#ffffff;
+border:1px solid var(--border);
+color:#111827;
+font-size:24px;
+text-decoration:none;
+transition:.25s;
+}
+
+.social-icons a:hover{
+transform:translateY(-6px) scale(1.08);
+box-shadow:0 0 25px rgba(124,92,255,.35);
+border-color:var(--primary);
+}
+
+.github{color:#111827!important}
+.linkedin{color:#0A66C2!important}
+.email{color:#a78bfa!important}
+.phone{color:#22d3ee!important}
+
+.project-card{
+display:flex;
+flex-direction:column;
+}
+
+.project-media{
+position:relative;
+border-radius:12px;
+overflow:hidden;
+margin-bottom:14px;
+height:180px;
+}
+
+.backend-ui{
+width:100%;
+height:100%;
+display:flex;
+background:linear-gradient(145deg,#0b1024,#050813);
+}
+
+/* Project Management dashboard */
+.pm-dashboard{
+height:100%;
+display:flex;
+background:
+radial-gradient(circle at 80% 20%,rgba(124,92,255,.25),transparent 40%),
+linear-gradient(145deg,#11162f,#070a18);
+}
+
+.pm-sidebar{
+width:22%;
+padding:12px;
+background:rgba(124,92,255,.12);
+border-right:1px solid rgba(124,92,255,.25);
+}
+
+.pm-sidebar span{
+display:block;
+height:6px;
+border-radius:99px;
+background:rgba(124,92,255,.6);
+margin-bottom:10px;
+}
+
+.pm-main{
+flex:1;
+padding:12px;
+display:flex;
+flex-direction:column;
+gap:10px;
+}
+
+.pm-header{
+height:10px;
+width:60%;
+border-radius:99px;
+background:rgba(167,139,250,.8);
+}
+
+.pm-projects{
+display:flex;
+gap:10px;
+}
+
+.pm-card{
+flex:1;
+padding:10px;
+border-radius:12px;
+background:rgba(124,92,255,.15);
+border:1px solid rgba(124,92,255,.3);
+display:flex;
+flex-direction:column;
+gap:6px;
+}
+
+.pm-title{
+height:6px;
+width:60%;
+background:rgba(167,139,250,.8);
+border-radius:99px;
+}
+
+.pm-card small{
+color:#a78bfa;
+font-size:11px;
+font-weight:700;
+align-self:flex-end;
+}
+
+.pm-card{
+flex:1;
+padding:8px;
+border-radius:10px;
+background:rgba(124,92,255,.15);
+border:1px solid rgba(124,92,255,.3);
+}
+
+.pm-card .title{
+display:block;
+height:6px;
+width:70%;
+background:rgba(167,139,250,.8);
+border-radius:99px;
+margin-bottom:6px;
+}
+
+.progress{
+height:6px;
+border-radius:99px;
+background:rgba(255,255,255,.1);
+overflow:hidden;
+}
+
+.progress div{
+height:100%;
+width:70%;
+background:linear-gradient(90deg,var(--primary),var(--cyan));
+}
+
+.pm-stats{
+display:flex;
+gap:8px;
+}
+
+.pm-stats div{
+flex:1;
+height:25px;
+border-radius:8px;
+background:rgba(124,92,255,.15);
+border:1px solid rgba(124,92,255,.25);
+}
+
+/* Livestock identity dashboard */
+.livestock-dashboard{
+height:100%;
+display:flex;
+background:
+radial-gradient(circle at 78% 24%,rgba(34,197,94,.22),transparent 38%),
+linear-gradient(145deg,#0a1f1a,#04100d);
+}
+
+.livestock-side{
+width:24%;
+padding:16px 10px;
+background:rgba(34,197,94,.12);
+border-right:1px solid rgba(34,197,94,.28);
+}
+
+.livestock-side span{
+display:block;
+height:7px;
+border-radius:99px;
+background:rgba(34,197,94,.58);
+margin-bottom:12px;
+box-shadow:0 0 10px rgba(34,197,94,.25);
+}
+
+.livestock-side span:nth-child(2){width:72%;}
+.livestock-side span:nth-child(3){width:55%;}
+
+.livestock-main{
+flex:1;
+padding:16px;
+display:flex;
+flex-direction:column;
+gap:12px;
+}
+
+.livestock-title{
+width:62%;
+height:9px;
+border-radius:99px;
+background:rgba(209,250,229,.72);
+box-shadow:0 0 12px rgba(34,197,94,.35);
+}
+
+.camel-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:10px;
+}
+
+.camel-chip{
+min-height:54px;
+border-radius:12px;
+background:rgba(34,197,94,.12);
+border:1px solid rgba(34,197,94,.32);
+display:flex;
+flex-direction:column;
+align-items:flex-start;
+justify-content:center;
+gap:5px;
+padding:10px;
+box-shadow:0 0 18px rgba(34,197,94,.11);
+}
+
+.camel-chip i{
+font-size:18px;
+color:#22c55e;
+filter:drop-shadow(0 0 8px rgba(34,197,94,.45));
+}
+
+.camel-chip span{
+font-size:11px;
+font-weight:800;
+letter-spacing:.4px;
+color:#d1fae5;
+}
+
+.ownership-flow{
+margin-top:auto;
+height:36px;
+border-radius:12px;
+background:rgba(255,255,255,.045);
+border:1px solid rgba(34,197,94,.18);
+display:flex;
+align-items:center;
+justify-content:center;
+gap:8px;
+color:#bbf7d0;
+font-size:11px;
+font-weight:700;
+}
+
+.ownership-flow i{color:#22c55e;}
+
+/* DocuStream files style */
+.doc-files-ui{
+height:100%;
+position:relative;
+background:
+radial-gradient(circle at 50% 35%,rgba(124,92,255,.24),transparent 45%),
+linear-gradient(145deg,#14102a,#060312);
+display:flex;
+align-items:center;
+justify-content:center;
+gap:14px;
+overflow:hidden;
+}
+
+.file-card{
+width:72px;
+height:95px;
+border-radius:12px;
+background:rgba(255,255,255,.055);
+border:1px solid rgba(124,92,255,.22);
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+gap:8px;
+position:relative;
+z-index:2;
+box-shadow:0 0 20px rgba(124,92,255,.16);
+transition:.3s ease;
+}
+
+.file-card::before{
+content:"";
+position:absolute;
+top:0;
+right:0;
+width:20px;
+height:20px;
+background:rgba(255,255,255,.08);
+clip-path:polygon(100% 0,0 0,100% 100%);
+}
+
+.file-card i{
+font-size:30px;
+}
+
+.file-card span{
+font-size:10px;
+font-weight:800;
+letter-spacing:.8px;
+color:#e8eaff;
+}
+
+.word-file i{color:#2b7cff;}
+.pdf-file i{color:#ff4b5c;}
+.excel-file i{color:#22c55e;}
+
+.doc-files-ui:hover .file-card{
+transform:translateY(-6px);
+}
+
+.file-flow{
+position:absolute;
+left:25px;
+right:25px;
+top:50%;
+height:2px;
+background:linear-gradient(90deg,transparent,var(--primary),var(--cyan),transparent);
+box-shadow:0 0 18px rgba(124,92,255,.55);
+z-index:1;
+}
+
+.backend-ui{
+width:100%;
+height:100%;
+display:flex;
+background:linear-gradient(145deg,#0b1024,#050813);
+}
+
+.ui-sidebar{
+width:28%;
+background:rgba(124,92,255,.15);
+border-right:1px solid rgba(124,92,255,.2);
+}
+
+.ui-content{
+flex:1;
+padding:14px;
+}
+
+.ui-content span{
+display:block;
+height:8px;
+border-radius:99px;
+background:rgba(167,139,250,.8);
+margin-bottom:12px;
+box-shadow:0 0 12px rgba(124,92,255,.4);
+}
+
+.ui-content span:nth-child(2){width:70%;background:rgba(34,211,238,.6)}
+.ui-content span:nth-child(3){width:85%}
+.ui-content span:nth-child(4){width:55%;background:rgba(34,211,238,.5)}
+
+.project-media::after{
+content:"";
+position:absolute;
+inset:0;
+background:linear-gradient(180deg,rgba(6,7,15,.1),rgba(6,7,15,.75));
+}
+
+.project-card:hover .project-media img{
+transform:scale(1.06);
+filter:brightness(.8);
+}
+
+.project-card img{
+width:100%;
+border-radius:10px;
+margin-bottom:10px;
+}
+
+.project-preview{
+height:180px;
+border-radius:12px;
+margin-bottom:14px;
+background:linear-gradient(145deg,#11162f,#070a18);
+border:1px solid rgba(124,92,255,.25);
+position:relative;
+overflow:hidden;
+}
+
+.project-preview::before{
+content:"";
+position:absolute;
+inset:18px;
+border-radius:10px;
+background:
+linear-gradient(90deg,rgba(124,92,255,.15) 1px,transparent 1px),
+linear-gradient(rgba(124,92,255,.10) 1px,transparent 1px),
+#080c1d;
+background-size:22px 22px;
+}
+
+.project-preview::after{
+content:"";
+position:absolute;
+right:28px;
+top:30px;
+width:115px;
+height:115px;
+border-radius:50%;
+background:conic-gradient(var(--primary) 0 72%, rgba(255,255,255,.08) 72% 100%);
+box-shadow:0 0 30px rgba(124,92,255,.35);
+}
+
+.project-preview .preview-lines{
+position:absolute;
+left:28px;
+top:38px;
+width:145px;
+z-index:2;
+}
+
+.preview-lines span{
+display:block;
+height:8px;
+border-radius:99px;
+background:rgba(167,139,250,.8);
+margin-bottom:13px;
+box-shadow:0 0 14px rgba(124,92,255,.35);
+}
+
+.preview-lines span:nth-child(2){width:80%;background:rgba(34,211,238,.65)}
+.preview-lines span:nth-child(3){width:60%}
+.preview-lines span:nth-child(4){width:90%;background:rgba(34,211,238,.45)}
+
+.project-tags{
+display:flex;
+flex-wrap:wrap;
+gap:8px;
+margin-top:14px;
+}
+
+.project-card .project-link{
+display:inline-flex;
+align-items:center;
+gap:6px;
+color:#a78bfa;
+text-decoration:none;
+font-weight:600;
+padding-top:12px;
+transition:.25s ease;
+}
+
+.project-link{
+display:inline-flex;
+align-items:center;
+gap:6px;
+color:#a78bfa;
+text-decoration:none;
+font-weight:600;
+margin-top:12px;
+transition:.25s ease;
+}
+
+.project-link i{
+transition:.25s ease;
+}
+
+.project-link:hover{
+transform:translateX(6px);
+}
+
+.project-link:hover i{
+transform:translateX(4px);
+}
+
+.project-tags span{
+font-size:12px;
+padding:6px 10px;
+border-radius:999px;
+background:rgba(124,92,255,.12);
+border:1px solid rgba(124,92,255,.22);
+color:#5b4bd8;
+}
+
+footer{text-align:center;padding:40px;color:#667085}
+
+@keyframes statPop{
+0%{opacity:0;transform:translateY(18px) scale(.94);}
+100%{opacity:1;transform:translateY(0) scale(1);}
+}
+
+.stat{
+animation:statPop .7s ease both;
+}
+
+.stat:nth-child(1){animation-delay:.05s}
+.stat:nth-child(2){animation-delay:.18s}
+.stat:nth-child(3){animation-delay:.31s}
+
+@media (max-width: 1024px){
+  header{
+    padding:18px 28px;
+  }
+
+  nav a{
+    margin:0 10px;
+  }
+
+  .hero{
+    padding:70px 36px;
+    gap:30px;
+  }
+
+  .hero-text h1{
+    font-size:52px;
+  }
+
+  .hero-img{
+    transform:scale(.88);
+    transform-origin:center;
+  }
+
+  .grid{
+    grid-template-columns:repeat(2,1fr);
+    max-width:760px;
+  }
+}
+
+@media (max-width: 768px){
+  header{
+    flex-direction:column;
+    gap:16px;
+    padding:18px 20px;
+  }
+
+  nav{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:12px;
+  }
+
+  nav a{
+    margin:0;
+    font-size:14px;
+  }
+
+  .hero{
+    flex-direction:column;
+    text-align:center;
+    padding:52px 22px;
+  }
+
+  .hero-text{
+    max-width:100%;
+  }
+
+  .hero-text h1{
+    font-size:44px;
+  }
+
+  .hero-text p{
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  .hero-img{
+    width:420px;
+    max-width:100%;
+    transform:scale(.82);
+    margin-top:0;
+  }
+
+  section{
+    padding:42px 20px;
+  }
+
+  .stats{
+    flex-direction:column;
+    gap:18px;
+  }
+
+  .grid{
+    grid-template-columns:1fr;
+    max-width:420px;
+  }
+
+  .skills-tabs{
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+
+  .tab{
+    flex:1 1 140px;
+    text-align:center;
+  }
+}
+
+@media (max-width: 480px){
+  .logo{
+    font-size:22px;
+  }
+
+  .hero-text h1{
+    font-size:38px;
+  }
+
+  .hero-text h2{
+    font-size:22px;
+  }
+
+  .hero-img{
+    transform:scale(.72);
+    margin:-35px auto;
+  }
+
+  .card{
+    padding:16px;
+  }
+
+  .icons{
+    font-size:34px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">&lt;/ShahadCode&gt;</div>
+<nav>
+<a href="#">Home</a>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
+
+<section class="hero">
+
+<div class="hero-text">
+<h1>Hello, I'm <span>Shahad</span></h1>
+<h2>Software Engineer</h2>
+<p>Welcome to Shahad Code, where modern backend systems meet elegant digital experiences.</p>
+<a href="#projects" class="btn">View Work</a>
+</div>
+
+<div class="hero-img">
+  <div class="emoji-girl-image" aria-label="Girl working on laptop illustration">
+    <img src="assets/shahad-hero-girl.png" alt="Shahad working on a laptop with a lavender blanket">
+  </div>
+  <div class="code-float">&lt;/&gt;</div>
+</div>
+
+</section>
+
+<section id="about">
+<h2>About Me</h2>
+<div class="card">
+<p><strong>Turning ideas into reliable digital solutions.</strong></p>
+<p>I'm Shahad, a Software Engineer focused on building backend services, REST APIs, and clean web interfaces. I enjoy turning complex requirements into organized, maintainable, and user-friendly systems.</p>
+<p>My work combines Java, Spring Boot, SQL, and frontend technologies to deliver practical solutions that are clear, scalable, and easy to use.</p>
+<div class="stats">
+<div class="stat"><strong>2+</strong><p>Years Experience</p></div>
+<div class="stat"><strong>15+</strong><p>Projects Completed</p></div>
+<div class="stat"><strong>10+</strong><p>Technologies Used</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="skills">
+<h2>Technologies I work with</h2>
+
+<div class="skills-tabs">
+<div class="tab">Languages</div>
+<div class="tab">Web</div>
+<div class="tab">Backend</div>
+<div class="tab">Tools</div>
+</div>
+
+<div class="grid">
+<div class="card skill-box">
+<h3>Languages</h3>
+<div class="icons">
+<i class="devicon-java-plain colored" title="Java"></i>
+<i class="devicon-javascript-plain colored" title="JavaScript"></i>
+<i class="devicon-html5-plain colored" title="HTML5"></i>
+<i class="devicon-css3-plain colored" title="CSS3"></i>
+</div>
+</div>
+
+<div class="card skill-box">
+<h3>Backend & Database</h3>
+<div class="icons">
+<i class="devicon-spring-plain colored" title="Spring Boot"></i>
+<i class="devicon-mysql-plain colored" title="SQL"></i>
+<i class="devicon-apache-plain colored" title="Apache"></i>
+<i class="ri-database-2-line" title="DB2" style="color:#22d3ee"></i>
+</div>
+</div>
+
+<div class="card skill-box">
+<h3>Tools</h3>
+<div class="icons">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/intellij/intellij-original.svg" width="40" title="IntelliJ">
+<img src="https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg" width="40" title="Postman">
+<i class="devicon-github-original" title="GitHub" style="color:#111827"></i>
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" width="40" title="VS Code">
+</div>
+</div>
+</div>
+</section>
+
+<section id="projects">
+<h2>Featured Projects</h2>
+<div class="grid">
+<div class="card project-card">
+<div class="project-media">
+  <div class="pm-dashboard">
+    <div class="pm-sidebar">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <div class="pm-main">
+      <div class="pm-header"></div>
+
+      <div class="pm-projects">
+        <div class="pm-card">
+          <div class="pm-title"></div>
+          <div class="progress"><div style="width:75%"></div></div>
+          <small>75%</small>
+        </div>
+        <div class="pm-card">
+          <div class="pm-title"></div>
+          <div class="progress"><div style="width:45%"></div></div>
+          <small>45%</small>
+        </div>
+      </div>
+
+      <div class="pm-stats">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+  </div>
+</div>
+<h3>Project Management Platform</h3
+<p>A web platform for managing projects, tracking progress, organizing tasks, and monitoring project status through a clear dashboard.</p>
+<div class="project-tags">
+  <span>PHP</span>
+  <span>Laravel</span>
+  <span>MySQL</span>
+  <span>Dashboard</span>
+</div>
+<a href="https://github.com/Shdd1/Laravel-Project/tree/main" target="_blank" class="project-link">View API <i class="ri-arrow-right-line"></i></a>
+</div>
+
+<div class="card project-card">
+<div class="project-media">
+  <div class="livestock-dashboard">
+    <div class="livestock-side">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <div class="livestock-main">
+      <div class="livestock-title"></div>
+      <div class="camel-grid">
+        <div class="camel-chip">
+          <i class="ri-price-tag-3-line"></i>
+          <span>ID #A1023</span>
+        </div>
+        <div class="camel-chip">
+          <i class="ri-price-tag-3-line"></i>
+          <span>ID #B8841</span>
+        </div>
+      </div>
+      <div class="ownership-flow">
+        <span>Owner</span>
+        <i class="ri-arrow-right-line"></i>
+        <span>Transfer</span>
+      </div>
+    </div>
+  </div>
+</div>
+<h3>Livestock Management System</h3>
+<p> system for buying and selling numbered camels, managing transactions, and transferring ownership with reliable data handling and structured APIs.</p>
+<div class="project-tags">
+  <span>Java</span>
+  <span>Spring Boot</span>
+  <span>Hibernate</span>
+  <span>SQL</span>
+</div>
+<a href="https://github.com/Shdd1/Livestock-management-System" target="_blank" class="project-link">View API <i class="ri-arrow-right-line"></i></a>
+</div>
+
+<div class="card project-card">
+<div class="project-media">
+  <div class="doc-files-ui">
+    <div class="file-card word-file">
+      <i class="ri-file-word-2-line"></i>
+      <span>WORD</span>
+    </div>
+    <div class="file-card pdf-file">
+      <i class="ri-file-pdf-2-line"></i>
+      <span>PDF</span>
+    </div>
+    <div class="file-card excel-file">
+      <i class="ri-file-excel-2-line"></i>
+      <span>EXCEL</span>
+    </div>
+    <div class="file-flow"></div>
+  </div>
+</div>
+<h3>DocuStream System</h3>
+<p>
+High-performance internal system that processes large input datasets, retrieves structured data from databases, and generates automated outputs including Word, PDF, Excel, and ZIP files.
+</p>
+  <div class="project-tags">
+  <span>Java</span>
+  <span>Spring Boot</span>
+  <span>SQL</span>
+  <span>File Processing</span>
+</div>
+</div>
+</div>
+</section>
+
+<section id="contact">
+<h2>Contact</h2>
+<div class="card">
+<h3>Let's build something amazing together!</h3>
+<p>I'm open to collaboration, backend development, web interfaces, and software engineering opportunities.</p>
+
+
+<div class="social-icons">
+<a href="https://github.com/Shdd1?tab=repositories" target="_blank" class="github" aria-label="GitHub"><i class="ri-github-fill"></i></a>
+<a href="https://www.linkedin.com/in/shahad-alhazmi-43b5b1216/" target="_blank" class="linkedin" aria-label="LinkedIn"><i class="ri-linkedin-box-fill"></i></a>
+<a href="mailto:shahadabudo@gmail.com" class="email" aria-label="Email"><i class="ri-mail-fill"></i></a>
+</div>
+</div>
+</section>
+
+<footer>
+© 2026 Shahad | All Rights Reserved
+</footer>
+  
+<script>
+console.assert(document.querySelector('.logo').textContent.includes('</Shahad>'),'Logo error');
+console.assert(document.querySelector('#skills'),'Skills missing');
+console.assert(document.querySelector('#projects'),'Projects missing');
+console.assert(document.querySelectorAll('.devicon-java-plain').length === 1,'Java colored icon missing');
+console.assert(document.querySelectorAll('.social-icons a').length >= 3,'Social icons missing');
+console.assert(document.querySelector('.laptop-screen'),'Laptop mockup missing');
+</script>
+
+</body>
+</html>
