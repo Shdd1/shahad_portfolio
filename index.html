@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Shahad Code - Software Engineer portfolio specializing in Java, Spring Boot, REST APIs, and data processing systems. Building scalable backend solutions and elegant digital experiences.">
   <title>Shahad Code | Software Engineer Portfolio</title>
 <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
@@ -19,7 +20,10 @@
 }
 
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;}
+html{
+scroll-behavior:smooth;
+overflow-x:hidden;
+}
 body{
 margin:0;
 font-family:Segoe UI;
@@ -28,6 +32,13 @@ radial-gradient(circle at 18% 12%,rgba(124,92,255,.12),transparent 30%),
 radial-gradient(circle at 88% 18%,rgba(34,211,238,.12),transparent 28%),
 linear-gradient(180deg,#ffffff 0%,#f8f9ff 100%);
 color:var(--text);
+overflow-x:hidden;
+min-width:0;
+}
+
+img,
+svg{
+max-width:100%;
 }
 
 header{
@@ -36,24 +47,35 @@ position:relative;
 z-index:10;
 justify-content:space-between;
 align-items:center;
-padding:20px 50px;
+padding:20px clamp(18px,5vw,50px);
 border-bottom:1px solid var(--border);
 background:rgba(255,255,255,.82);
 backdrop-filter:blur(18px);
 box-shadow:0 12px 35px rgba(17,24,39,.05);
+gap:18px;
+flex-wrap:wrap;
 }
 
 .logo{
 font-family:monospace;
 font-size:26px;
+font-size:clamp(20px,3vw,26px);
 font-weight:900;
 background:linear-gradient(135deg,var(--primary),var(--cyan));
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
 }
 
+nav{
+display:flex;
+align-items:center;
+justify-content:center;
+flex-wrap:wrap;
+gap:8px clamp(10px,2vw,18px);
+}
+
 nav a{
-margin:0 15px;
+margin:0;
 color:#475467;
 text-decoration:none;
 position:relative;
@@ -86,21 +108,27 @@ width:100%;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:88px 60px 70px;
-gap:40px;
+padding:clamp(52px,8vw,88px) clamp(18px,5vw,60px) clamp(44px,7vw,70px);
+gap:clamp(28px,5vw,56px);
+max-width:1240px;
+margin:0 auto;
+width:100%;
 }
 
 .hero-text{
 max-width:500px;
+min-width:0;
+flex:1 1 360px;
 }
 
 .hero-img{
-width:520px;
-height:380px;
+width:clamp(300px,40vw,520px);
+height:clamp(300px,32vw,380px);
 border-radius:22px;
 position:relative;
 margin-top:0;
 z-index:1;
+flex:0 1 520px;
 }
 
 .hero-text{
@@ -111,9 +139,9 @@ max-width:700px;
 margin:0 auto 30px;
 }
 
-.hero-text h1{font-size:64px;margin:0}
+.hero-text h1{font-size:clamp(38px,7vw,64px);margin:0;line-height:1.05}
 .hero-text span{color:var(--primary)}
-.hero-text p{color:var(--muted);max-width:500px}
+.hero-text p{color:var(--muted);max-width:500px;font-size:clamp(15px,2vw,17px);line-height:1.7}
 
 .btn{
 display:inline-flex;
@@ -129,6 +157,7 @@ cursor:pointer;
 font-weight:600;
 font-size:15px;
 min-width:150px;
+max-width:100%;
 text-align:center;
 text-decoration:none;
 transition:.3s ease;
@@ -161,11 +190,11 @@ box-shadow:0 0 20px rgba(124,92,255,.4);
 }
 
 .hero-img{
-width:520px;
-height:380px;
+width:clamp(300px,40vw,520px);
+height:clamp(300px,32vw,380px);
 border-radius:22px;
 position:relative;
-margin-top:-120px;
+margin-top:0;
 z-index:5;
 }
 
@@ -328,8 +357,8 @@ z-index:-3;
 }
 
 .emoji-girl-image{
-width:255px;
-height:255px;
+width:clamp(205px,24vw,255px);
+height:clamp(205px,24vw,255px);
 border-radius:50%;
 display:flex;
 align-items:center;
@@ -377,17 +406,20 @@ opacity:.72;
 }
 
 .code-float{
-right:62px;
-top:70px;
+right:clamp(26px,5vw,62px);
+top:clamp(42px,7vw,70px);
 background:linear-gradient(135deg,var(--primary),#9b72ff);
 color:white;
 box-shadow:0 18px 35px rgba(124,92,255,.28);
 }
 
-section{padding:60px}
+section{
+padding:clamp(42px,7vw,60px) clamp(18px,5vw,60px);
+width:100%;
+}
 h2{
 margin-bottom:30px;
-font-size:22px;
+font-size:clamp(20px,3vw,22px);
 font-weight:700;
 }
 
@@ -412,9 +444,10 @@ margin-bottom:25px;
 background:var(--card);
 border:1px solid var(--border);
 border-radius:18px;
-padding:20px;
+padding:clamp(16px,3vw,20px);
 transition:.3s;
 box-shadow:0 18px 45px rgba(17,24,39,.06);
+min-width:0;
 }
 .card:hover{
 transform:translateY(-8px);
@@ -423,11 +456,12 @@ box-shadow:0 22px 55px rgba(124,92,255,.14);
 
 .grid{
 display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:24px;
+grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));
+gap:clamp(18px,3vw,24px);
 align-items:stretch;
 max-width:1100px;
 margin:0 auto;
+width:100%;
 }
 
 .project-card{
@@ -462,23 +496,24 @@ flex-grow:1;
 
 .grid{
 display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:20px;
+grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));
+gap:clamp(18px,3vw,20px);
 }
 
 .stats{
 display:flex;
 justify-content:space-between;
 align-items:center;
-gap:40px;
+gap:clamp(16px,4vw,40px);
 margin-top:40px;
 padding-top:20px;
 border-top:1px solid rgba(124,92,255,.15);
+flex-wrap:wrap;
 }
 
 .stat{
 text-align:center;
-flex:1;
+flex:1 1 160px;
 position:relative;
 padding:16px 10px;
 border-radius:16px;
@@ -518,6 +553,7 @@ position:relative;
 display:flex;
 gap:10px;
 margin-bottom:20px;
+flex-wrap:wrap;
 }
 
 .tab{
@@ -526,12 +562,13 @@ border-radius:10px;
 border:1px solid var(--border);
 color:#475467;
 background:rgba(255,255,255,.72);
+flex:0 1 auto;
 }
 
 .icons{
 display:flex;
-gap:22px;
-font-size:42px;
+gap:clamp(14px,3vw,22px);
+font-size:clamp(32px,6vw,42px);
 align-items:center;
 justify-content:center;
 flex-wrap:wrap;
@@ -567,8 +604,8 @@ justify-content:center;
 }
 
 .social-icons a{
-width:48px;
-height:48px;
+width:clamp(44px,10vw,48px);
+height:clamp(44px,10vw,48px);
 border-radius:14px;
 display:flex;
 align-items:center;
@@ -602,7 +639,9 @@ position:relative;
 border-radius:12px;
 overflow:hidden;
 margin-bottom:14px;
-height:180px;
+height:auto;
+aspect-ratio:16/10;
+min-height:160px;
 }
 
 .backend-ui{
@@ -616,6 +655,7 @@ background:linear-gradient(145deg,#0b1024,#050813);
 .pm-dashboard{
 height:100%;
 display:flex;
+min-width:0;
 background:
 radial-gradient(circle at 80% 20%,rgba(124,92,255,.25),transparent 40%),
 linear-gradient(145deg,#11162f,#070a18);
@@ -642,6 +682,7 @@ padding:12px;
 display:flex;
 flex-direction:column;
 gap:10px;
+min-width:0;
 }
 
 .pm-header{
@@ -654,6 +695,7 @@ background:rgba(167,139,250,.8);
 .pm-projects{
 display:flex;
 gap:10px;
+min-width:0;
 }
 
 .pm-card{
@@ -665,6 +707,7 @@ border:1px solid rgba(124,92,255,.3);
 display:flex;
 flex-direction:column;
 gap:6px;
+min-width:0;
 }
 
 .pm-title{
@@ -728,6 +771,7 @@ border:1px solid rgba(124,92,255,.25);
 .livestock-dashboard{
 height:100%;
 display:flex;
+min-width:0;
 background:
 radial-gradient(circle at 78% 24%,rgba(34,197,94,.22),transparent 38%),
 linear-gradient(145deg,#0a1f1a,#04100d);
@@ -758,6 +802,7 @@ padding:16px;
 display:flex;
 flex-direction:column;
 gap:12px;
+min-width:0;
 }
 
 .livestock-title{
@@ -772,6 +817,7 @@ box-shadow:0 0 12px rgba(34,197,94,.35);
 display:grid;
 grid-template-columns:1fr 1fr;
 gap:10px;
+min-width:0;
 }
 
 .camel-chip{
@@ -830,11 +876,12 @@ align-items:center;
 justify-content:center;
 gap:14px;
 overflow:hidden;
+padding:14px;
 }
 
 .file-card{
-width:72px;
-height:95px;
+width:clamp(54px,8vw,72px);
+height:clamp(76px,11vw,95px);
 border-radius:12px;
 background:rgba(255,255,255,.055);
 border:1px solid rgba(124,92,255,.22);
@@ -861,11 +908,11 @@ clip-path:polygon(100% 0,0 0,100% 100%);
 }
 
 .file-card i{
-font-size:30px;
+font-size:clamp(24px,4vw,30px);
 }
 
 .file-card span{
-font-size:10px;
+font-size:clamp(8px,1.5vw,10px);
 font-weight:800;
 letter-spacing:.8px;
 color:#e8eaff;
@@ -894,6 +941,7 @@ z-index:1;
 width:100%;
 height:100%;
 display:flex;
+min-width:0;
 background:linear-gradient(145deg,#0b1024,#050813);
 }
 
@@ -906,6 +954,7 @@ border-right:1px solid rgba(124,92,255,.2);
 .ui-content{
 flex:1;
 padding:14px;
+min-width:0;
 }
 
 .ui-content span{
@@ -940,7 +989,9 @@ margin-bottom:10px;
 }
 
 .project-preview{
-height:180px;
+height:auto;
+aspect-ratio:16/10;
+min-height:160px;
 border-radius:12px;
 margin-bottom:14px;
 background:linear-gradient(145deg,#11162f,#070a18);
@@ -966,8 +1017,8 @@ content:"";
 position:absolute;
 right:28px;
 top:30px;
-width:115px;
-height:115px;
+width:clamp(76px,11vw,115px);
+height:clamp(76px,11vw,115px);
 border-radius:50%;
 background:conic-gradient(var(--primary) 0 72%, rgba(255,255,255,.08) 72% 100%);
 box-shadow:0 0 30px rgba(124,92,255,.35);
@@ -977,7 +1028,7 @@ box-shadow:0 0 30px rgba(124,92,255,.35);
 position:absolute;
 left:28px;
 top:38px;
-width:145px;
+width:min(145px,48%);
 z-index:2;
 }
 
@@ -999,6 +1050,7 @@ display:flex;
 flex-wrap:wrap;
 gap:8px;
 margin-top:14px;
+min-width:0;
 }
 
 .project-card .project-link{
@@ -1064,26 +1116,13 @@ animation:statPop .7s ease both;
     padding:18px 28px;
   }
 
-  nav a{
-    margin:0 10px;
-  }
-
   .hero{
     padding:70px 36px;
     gap:30px;
   }
 
-  .hero-text h1{
-    font-size:52px;
-  }
-
-  .hero-img{
-    transform:scale(.88);
-    transform-origin:center;
-  }
-
   .grid{
-    grid-template-columns:repeat(2,1fr);
+    grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));
     max-width:760px;
   }
 }
@@ -1111,14 +1150,11 @@ animation:statPop .7s ease both;
     flex-direction:column;
     text-align:center;
     padding:52px 22px;
+    min-height:auto;
   }
 
   .hero-text{
     max-width:100%;
-  }
-
-  .hero-text h1{
-    font-size:44px;
   }
 
   .hero-text p{
@@ -1127,10 +1163,23 @@ animation:statPop .7s ease both;
   }
 
   .hero-img{
-    width:420px;
+    width:min(420px,100%);
+    height:clamp(270px,70vw,340px);
     max-width:100%;
-    transform:scale(.82);
     margin-top:0;
+  }
+
+  .hero-img::before{
+    width:min(300px,80vw);
+    height:min(300px,80vw);
+  }
+
+  .hero-img::after{
+    left:50%;
+    top:50%;
+    width:min(340px,88vw);
+    height:min(245px,64vw);
+    transform:translate(-50%,-50%) rotate(7deg);
   }
 
   section{
@@ -1156,6 +1205,17 @@ animation:statPop .7s ease both;
     flex:1 1 140px;
     text-align:center;
   }
+
+  .project-media,
+  .project-preview{
+    min-height:150px;
+  }
+
+  .pm-sidebar,
+  .livestock-side,
+  .ui-sidebar{
+    width:24%;
+  }
 }
 
 @media (max-width: 480px){
@@ -1163,17 +1223,14 @@ animation:statPop .7s ease both;
     font-size:22px;
   }
 
-  .hero-text h1{
-    font-size:38px;
-  }
-
   .hero-text h2{
     font-size:22px;
   }
 
   .hero-img{
-    transform:scale(.72);
-    margin:-35px auto;
+    width:100%;
+    height:290px;
+    margin:0 auto;
   }
 
   .card{
@@ -1182,6 +1239,53 @@ animation:statPop .7s ease both;
 
   .icons{
     font-size:34px;
+  }
+
+  .btn{
+    width:100%;
+  }
+
+  .code-float{
+    width:52px;
+    height:52px;
+    font-size:22px;
+    right:20px;
+    top:42px;
+  }
+
+  .doc-files-ui{
+    gap:8px;
+  }
+
+  .file-card{
+    border-radius:10px;
+  }
+
+  .ownership-flow{
+    font-size:9px;
+    gap:4px;
+  }
+}
+
+@media (min-width: 1280px){
+  .hero,
+  .grid,
+  section > .card{
+    max-width:1180px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+}
+
+@media (min-width: 1600px){
+  .hero,
+  .grid,
+  section > .card{
+    max-width:1320px;
+  }
+
+  body{
+    font-size:18px;
   }
 }
 </style>
@@ -1211,7 +1315,7 @@ animation:statPop .7s ease both;
 
 <div class="hero-img">
   <div class="emoji-girl-image" aria-label="Girl working on laptop illustration">
-    <img src="assets/shahad-hero-girl.png" alt="Shahad working on a laptop with a lavender blanket">
+    <img src="assets/shahad-hero-girl.png" alt="Shahad working on an HP laptop with a pink bow">
   </div>
   <div class="code-float">&lt;/&gt;</div>
 </div>
@@ -1312,7 +1416,7 @@ animation:statPop .7s ease both;
     </div>
   </div>
 </div>
-<h3>Project Management Platform</h3
+<h3>Project Management Platform</h3>
 <p>A web platform for managing projects, tracking progress, organizing tasks, and monitoring project status through a clear dashboard.</p>
 <div class="project-tags">
   <span>PHP</span>
@@ -1411,16 +1515,15 @@ High-performance internal system that processes large input datasets, retrieves 
 </section>
 
 <footer>
-© 2026 Shahad | All Rights Reserved
+&copy; 2026 Shahad | All Rights Reserved
 </footer>
   
 <script>
-console.assert(document.querySelector('.logo').textContent.includes('</Shahad>'),'Logo error');
+console.assert(document.querySelector('.logo').textContent.includes('ShahadCode'),'Logo error');
 console.assert(document.querySelector('#skills'),'Skills missing');
 console.assert(document.querySelector('#projects'),'Projects missing');
-console.assert(document.querySelectorAll('.devicon-java-plain').length === 1,'Java colored icon missing');
+console.assert(document.querySelector('.emoji-girl-image img'),'Hero image missing');
 console.assert(document.querySelectorAll('.social-icons a').length >= 3,'Social icons missing');
-console.assert(document.querySelector('.laptop-screen'),'Laptop mockup missing');
 </script>
 
 </body>
